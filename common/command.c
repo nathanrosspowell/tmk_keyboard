@@ -216,6 +216,7 @@ static bool command_common(uint8_t code)
             command_state = CONSOLE;
             break;
         case KC_PAUSE:
+        case KC_SPACE:
             clear_keyboard();
             print("\n\nJump to bootloader... ");
             _delay_ms(1000);
