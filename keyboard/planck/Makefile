@@ -52,6 +52,9 @@ SRC =	keymap_common.c \
 	matrix.c \
 	led.c
 
+# Build `keymap_nathan.c`
+KEYMAP = nathan
+
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
 else
