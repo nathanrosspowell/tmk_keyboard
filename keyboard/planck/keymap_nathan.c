@@ -1,6 +1,7 @@
 // Author: Nathan Ross Powell <nathanrospowell@gmail.com>
 
 #include "keymap_common.h"
+#include "bootloader.h"
 
 #ifndef KEYMAP_GRID
    /* Planck keymap definition macro for the 'grid' layout
@@ -43,15 +44,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
        LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
        RSFT, Z,    X,    C,    V,    B,    N,    M,    LBRC, FN10, FN11, FN12,
-       LGUI, BSLS, SLSH, LALT, FN0,  SPC,  SPC,  FN1,  LEFT, DOWN, UP,   RGHT),
+       LGUI, BSLS, SLSH, LALT, FN0,  SPC,  SPC,  FN1,  LEFT, DOWN, UP,   RGHT ),
 
    /* 1: fn left/lower layer
     * The top row are Visual Studio combos:
     *   'Run', 'Breakpoint', 'Step over', 'Step into', 'Set cursor to line'
     * 2nd row are key combos:
-    *   'ctrl-alt-delete', 'ctrl-shift-escape' 
+    *   'ctrl-alt-delete', 'ctrl-shift-escape'
     * 3rd row are macros keys:
-    *   'P0' - 'P5' execute a script on Windows machines 
+    *   'P0' - 'P5' execute a script on Windows machines
     * ,-----------------------------------------------------------------------.
     * | ESC | F5   | F9 | F10 | F11 |S+F11|CSF10|NLock|Num7 |Num8 |Num9 | Del |
     * |-----------------------------------------------------------------------|
@@ -59,14 +60,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |-----------------------------------------------------------------------|
     * |     | P0  | P1  | P2  | P3  | P4  | P5  |Num. |Num1 |Num2 |Num3 |Num/ |
     * |-----------------------------------------------------------------------|
-    * |     |User |     |     |     |     |     |     |Home |PgDn |PgUp | End |
+    * |     |User |Boot |     |     |     |     |     |Home |PgDn |PgUp | End |
     * `-----------------------------------------------------------------------'
     */
   [1] = KEYMAP_GRID(
        ESC,  F5,   F9,   F10,  F11,  FN30, FN31, NLCK, P7,   P8,   P9,   DEL,
        TRNS, FN16, FN17, INS,  PSCR, PAUS, SLCK, P0,   P4,   P5,   P6,   PEQL,
        TRNS, FN2,  FN3,  FN4,  FN5,  FN6,  FN7,  PDOT, P1,   P2,   P3,   PSLS,
-       TRNS, FN8,  TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, HOME, PGDN, PGUP, END ),
+       TRNS, FN8,  FN9,  TRNS, TRNS, TRNS, TRNS, TRNS, HOME, PGDN, PGUP, END  ),
 
   /* 2: fn right/raise layer
     * ,-----------------------------------------------------------------------.
@@ -93,7 +94,8 @@ enum macro_id {
     M_P3,
     M_P4,
     M_P5,
-    M_USERNAME
+    M_USERNAME,
+    M_BOOTLOADER
 };
 
 const uint16_t PROGMEM fn_actions[] = {
@@ -107,6 +109,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [6] = ACTION_MACRO(M_P4),
   [7] = ACTION_MACRO(M_P5),
   [8] = ACTION_MACRO(M_USERNAME),
+  [9] = ACTION_FUNCTION_TAP(M_BOOTLOADER),
   // Braces
   [10] = ACTION_MODS_KEY(MOD_LSFT, KC_9), // (
   [11] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC), // {
@@ -126,7 +129,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [23] = ACTION_MODS_KEY(MOD_LSFT, KC_6), // ^
   [24] = ACTION_MODS_KEY(MOD_LSFT, KC_7), // &
   [25] = ACTION_MODS_KEY(MOD_LSFT, KC_8), // *
-  [26] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL), // + 
+  [26] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL), // +
   [27] = ACTION_MODS_KEY(MOD_LSFT, KC_MINUS), // _
   [28] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOTE), // "
   [29] = ACTION_MODS_KEY(MOD_LSFT, KC_GRAVE), // ~
@@ -141,39 +144,45 @@ const uint16_t PROGMEM fn_actions[] = {
 // *return*
 #define RUN_PYTHON_PROGRAM_ON_WIN MACRO( T(ENT), END )
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
     keyevent_t event = record->event;
     switch (id) {
         case M_P0:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 0 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 0 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_P1:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 1 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 1 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_P2:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 2 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 2 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_P3:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 3 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 3 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_P4:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 4 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 4 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_P5:
             return event.pressed ?
-                ADD_PYTHON_PROGRAM_ON_WIN( 5 ) : 
+                ADD_PYTHON_PROGRAM_ON_WIN( 5 ) :
                 RUN_PYTHON_PROGRAM_ON_WIN;
         case M_USERNAME:
             return event.pressed ?
                 MACRO( T(N), T(A), T(T), T(H), T(A), T(N), T(R), T(O), T(S), T(S), T(P), T(O), T(W), T(E), T(L), T(L), END ) :
                 MACRO_NONE;
-
     }
     return MACRO_NONE;
+}
+
+void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    if (id == M_BOOTLOADER && record->tap.count > 1 ) {
+        clear_keyboard();
+        _delay_ms(250);
+        bootloader_jump();
+    }
 }
