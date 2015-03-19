@@ -31,20 +31,20 @@
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    /* 0: main layer
     * ,-----------------------------------------------------------------------.
-    * |Tab  | q   | w   | e   | r   | t   | y   | u   | i   | o   | p   | BS  |
+    * |Esc  | q   | w   | e   | r   | t   | y   | u   | i   | o   | p   | BS  |
     * |-----------------------------------------------------------------------|
-    * |Ctrl | a   | s   | d   | f   | g   | h   | j   | k   | l   | ;   | Ret |
+    * |Tab  | a   | s   | d   | f   | g   | h   | j   | k   | l   | ;   | Ret |
     * |-----------------------------------------------------------------------|
-    * |Shift| z   | x   | c   | v   | b   | n   | m   | [   | (   | {   | <   |
+    * |Ctrl | z   | x   | c   | v   | b   | n   | m   | .   | ,   | '   |Shift|
     * |-----------------------------------------------------------------------|
-    * |Meta | \   | /   | Alt |Lower|Space|Space|Upper|Left |Down | Up  |Right|
+    * |Alt  | \   |     |     |Lower|Space|Space|Upper| [   | ]   | /   |Meta |
     * `-----------------------------------------------------------------------'
     */
   [0] = KEYMAP_GRID(
-       TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
-       LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
-       RSFT, Z,    X,    C,    V,    B,    N,    M,    LBRC, FN10, FN11, FN12,
-       LGUI, BSLS, SLSH, LALT, FN0,  SPC,  SPC,  FN1,  LEFT, DOWN, UP,   RGHT ),
+       ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
+       TAB,  A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
+       LCTL, Z,    X,    C,    V,    B,    N,    M,    DOT,  COMA, QUOT, RSFT,
+       LALT, BSLS, TRNS, TRNS, FN0,  SPC,  SPC,  FN1,  LBRC, RBRC, SLSH, LGUI ),
 
    /* 1: fn left/lower layer
     * The top row are Visual Studio combos:
