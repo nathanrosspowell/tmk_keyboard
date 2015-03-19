@@ -65,19 +65,19 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* 2: fn right/raise layer
     * ,-----------------------------------------------------------------------.
-    * | ESC | F5   | F9 | F10 | F11 |S+F11|CSF10|NLock|Num7 |Num8 |Num9 | Del |
+    * |      | !   | @   | #   | $   | %   | ^   | &   | *   | -   | +   |    |
     * |-----------------------------------------------------------------------|
-    * |     | !   | @   | #   | $   | %   | ^   | &   | *   | -   | +   | =   |
+    * |     |     |     |     |     |     |     | `   | ~   | _   | =   |     |
     * |-----------------------------------------------------------------------|
-    * |     | _   | '   | "   | `   | ~   | ,   | .   | ]   | )   | }   | >   |
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
     * |-----------------------------------------------------------------------|
-    * |     |NextT| P/P |PrevT|     |     | Esc |     |Vol- |Mute |Vol+ |     |
+    * |     |NextT| P/P |PrevT|     |     |     |     |Vol- |Mute |Vol+ |     |
     * `-----------------------------------------------------------------------'
     */
   [2] = KEYMAP_GRID(
-       ESC,  F5,   F9,   F10,  F11,  FN30, FN31, NLCK, P7,   P8,   P9,   DEL,
        TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, PAST,
-       TRNS, FN27, QUOT, FN28, GRV,  FN29, COMM, DOT,  RBRC, FN13, FN14, FN15,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, GRV,  FN29, FN27, FN15, TRNS,             
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,             
        TRNS, MNXT, MPLY, MPRV, TRNS, TRNS, ESC,  TRNS, VOLD, MUTE, VOLU, TRANS ),
 };
 
