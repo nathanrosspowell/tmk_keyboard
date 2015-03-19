@@ -37,54 +37,48 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |-----------------------------------------------------------------------|
     * |Ctrl | z   | x   | c   | v   | b   | n   | m   | .   | ,   | '   |Shift|
     * |-----------------------------------------------------------------------|
-    * |Alt  | \   |     |     |Lower|Space|Space|Upper| [   | ]   | /   |Meta |
+    * |Alt  | \   | (   | )   |Lower|Space|Space|Upper| [   | ]   | /   |Meta |
     * `-----------------------------------------------------------------------'
     */
   [0] = KEYMAP_GRID(
        ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
        TAB,  A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
        LCTL, Z,    X,    C,    V,    B,    N,    M,    DOT,  COMA, QUOT, RSFT,
-       LALT, BSLS, TRNS, TRNS, FN0,  SPC,  SPC,  FN1,  LBRC, RBRC, SLSH, LGUI ),
+       LALT, BSLS, FN10, FN13, FN0,  SPC,  SPC,  FN1,  LBRC, RBRC, SLSH, LGUI ),
 
    /* 1: fn left/lower layer
-    * The top row are Visual Studio combos:
-    *   'Run', 'Breakpoint', 'Step over', 'Step into', 'Set cursor to line'
-    * 2nd row are key combos:
-    *   'ctrl-alt-delete', 'ctrl-shift-escape'
-    * 3rd row are macros keys:
-    *   'P0' - 'P5' execute a script on Windows machines
     * ,-----------------------------------------------------------------------.
-    * | ESC | F5   | F9 | F10 | F11 |S+F11|CSF10|NLock|Num7 |Num8 |Num9 | Del |
+    * |     |     | Up  |     | F1  | F2  | F3  | F4  |Num7 |Num8 |Num9 |     |
     * |-----------------------------------------------------------------------|
-    * |     |C/A/D|C/S/E| Ins |Print|Pause|SLock|Num0 |Num4 |Num5 |Num6 |Num= |
+    * |     |Left |Down |Right| F5  | F6  | F7  | F8  |Num4 |Num5 |Num6 |Num= |
     * |-----------------------------------------------------------------------|
-    * |     | P0  | P1  | P2  | P3  | P4  | P5  |Num. |Num1 |Num2 |Num3 |Num/ |
+    * |     | Ins |Home |PgUP | F9  | F10 | F11 | F12 |Num1 |Num2 |Num3 |     |
     * |-----------------------------------------------------------------------|
-    * |     |User |Boot |     |     |     |     |     |Home |PgDn |PgUp | End |
+    * |     | Del | End |PgDn |     |Num/ |Num* |Num. |Num0 |Num+ |Num- |     |
     * `-----------------------------------------------------------------------'
     */
   [1] = KEYMAP_GRID(
-       ESC,  F5,   F9,   F10,  F11,  FN30, FN31, NLCK, P7,   P8,   P9,   DEL,
-       TRNS, FN16, FN17, INS,  PSCR, PAUS, SLCK, P0,   P4,   P5,   P6,   PEQL,
-       TRNS, FN2,  FN3,  FN4,  FN5,  FN6,  FN7,  PDOT, P1,   P2,   P3,   PSLS,
-       TRNS, FN8,  FN9,  TRNS, TRNS, TRNS, TRNS, TRNS, HOME, PGDN, PGUP, END  ),
+       TRNS, TRNS, UP,   TRNS, F1,   F2,   F3,   F4,   P7,   F8,   P9,   TRNS,
+       TRNS, LEFT, DOWN, RGHT, F5,   F6,   F7,   F8,   P4,   P5,   P6,   PEQL,
+       TRNS, INS,  HOME, PGUP, F9,   F10,  F11,  F12,  P1,   P2,   P3,   TRNS,
+       TRNS, DEL,  END,  PGDN, TRNS, PPLS, PAST, PDOT, P0,   PPLS, PMNS, TRNS ),
 
   /* 2: fn right/raise layer
     * ,-----------------------------------------------------------------------.
-    * | F1  | F2  | F3  | F4  |F5   | F6  | F7  | F8  | F9  | F10 | F11 | F12 |
+    * | ESC | F5   | F9 | F10 | F11 |S+F11|CSF10|NLock|Num7 |Num8 |Num9 | Del |
     * |-----------------------------------------------------------------------|
     * |     | !   | @   | #   | $   | %   | ^   | &   | *   | -   | +   | =   |
     * |-----------------------------------------------------------------------|
     * |     | _   | '   | "   | `   | ~   | ,   | .   | ]   | )   | }   | >   |
     * |-----------------------------------------------------------------------|
-    * |     |NextT|PrevT|     |     |     | Esc |     |Mute |Vol- |Vol+ | P/P |
+    * |     |NextT| P/P |PrevT|     |     | Esc |     |Vol- |Mute |Vol+ |     |
     * `-----------------------------------------------------------------------'
     */
   [2] = KEYMAP_GRID(
-       F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,
+       ESC,  F5,   F9,   F10,  F11,  FN30, FN31, NLCK, P7,   P8,   P9,   DEL,
        TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, PAST,
        TRNS, FN27, QUOT, FN28, GRV,  FN29, COMM, DOT,  RBRC, FN13, FN14, FN15,
-       TRNS, MNXT, MPRV, TRNS, TRNS, TRNS, ESC,  TRNS, MUTE, VOLD, VOLU, MPLY ),
+       TRNS, MNXT, MPLY, MPRV, TRNS, TRNS, ESC,  TRNS, VOLD, MUTE, VOLU, TRANS ),
 };
 
 enum macro_id {
