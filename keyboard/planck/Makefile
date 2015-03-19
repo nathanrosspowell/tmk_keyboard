@@ -52,7 +52,7 @@ SRC =	keymap_common.c \
 	matrix.c \
 	led.c
 
-# Build `keymap_nathan.c`
+# Build `keymap_nathan_no_arrows.c`
 KEYMAP = nathan
 
 ifdef KEYMAP
