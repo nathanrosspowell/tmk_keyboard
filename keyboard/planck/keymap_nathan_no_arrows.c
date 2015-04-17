@@ -35,13 +35,13 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        TRNS, NO,   UP,   NO,   F1,   F2,   F3,   F4,   7,    8,    9,    TRNS,
        TRNS, LEFT, DOWN, RGHT, F5,   F6,   F7,   F8,   4,    5,    6,    PEQL,
        TRNS, INS,  HOME, PGUP, F9,   F10,  F11,  F12,  1,    2,    3,    TRNS,
-       TRNS, DEL,  END,  PGDN, FN0,  PPLS, PAST, PDOT, P0,   PPLS, PMNS, TRNS ),
+       TRNS, DEL,  END,  PGDN, FN0,  PPLS, PAST, PDOT, 0,    PPLS, PMNS, TRNS ),
 
   /* 2: fn right/raise layer
     * ,-----------------------------------------------------------------------.
-    * |     | !   | @   | #   | $   | %   | ^   | &   | *   | -   | +   |     |
+    * |     | !   | @   | #   | $   | %   | ^   | &   | *   | -   | +   | Del |
     * |-----------------------------------------------------------------------|
-    * |     |C/A/D|C/S/E|User |     |     |     | `   | ~   | _   | =   |     |
+    * |     |C/A/D|C/S/E|User |Num L|Cap L|Scrol| `   | ~   | _   | =   |     |
     * |-----------------------------------------------------------------------|
     * |     | P0  | P1  | P2  | P3  | P4  | P5  |     |     |     |     |     |
     * |-----------------------------------------------------------------------|
@@ -49,8 +49,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * `-----------------------------------------------------------------------'
     */
   [2] = KEYMAP_GRID(
-       TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, TRNS,
-       TRNS, FN16, FN17, FN8,  NO,   NO,   NO,   GRV,  FN29, FN27, EQL,  TRNS,
+       TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, DEL,
+       TRNS, FN16, FN17, FN8,  NLCK, CAPS, SLCK, GRV,  FN29, FN27, EQL,  TRNS,
        TRNS, FN2,  FN3,  FN4,  FN5,  FN6,  FN7,  NO,   NO,   NO,   NO,   NO,
        TRNS, MNXT, MPLY, MPRV, NO,   TRNS, TRNS, FN1,  VOLD, MUTE, VOLU, TRNS ),
 };
