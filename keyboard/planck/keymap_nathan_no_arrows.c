@@ -7,17 +7,17 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * ,-----------------------------------------------------------------------.
     * |Esc  | q   | w   | e   | r   | t   | y   | u   | i   | o   | p   | BS  |
     * |-----------------------------------------------------------------------|
-    * |Tab  | a   | s   | d   | f   | g   | h   | j   | k   | l   | ;   | Ret |
+    * |Ctrl | a   | s   | d   | f   | g   | h   | j   | k   | l   | ;   | Ret |
     * |-----------------------------------------------------------------------|
-    * |Ctrl | z   | x   | c   | v   | b   | n   | m   | ,   | .   | '   |Shift|
+    * | Tab | z   | x   | c   | v   | b   | n   | m   | ,   | .   | '   |Shift|
     * |-----------------------------------------------------------------------|
     * |Alt  | \   | (   | )   |Lower|Space|Space|Upper| [   | ]   | /   |Meta |
     * `-----------------------------------------------------------------------'
     */
   [0] = KEYMAP_GRID(
        ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
-       TAB,  A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
-       LCTL, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  QUOT, RSFT,
+       LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
+       TAB,  Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  QUOT, RSFT,
        LALT, BSLS, FN10, FN11, FN0,  SPC,  SPC,  FN1,  LBRC, RBRC, SLSH, LGUI ),
 
    /* 1: fn left/lower layer
