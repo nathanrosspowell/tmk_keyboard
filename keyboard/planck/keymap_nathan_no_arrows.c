@@ -77,24 +77,24 @@ const uint16_t PROGMEM fn_actions[] = {
   [7] = ACTION_MACRO(M_P5),
   [8] = ACTION_MACRO(M_USERNAME),
   // Braces
-  [10] = ACTION_MODS_KEY(MOD_LSFT, KC_9), // (
-  [11] = ACTION_MODS_KEY(MOD_LSFT, KC_0),  // )
+  [10] = ACTION_MODS_KEY(MOD_RSFT, KC_9), // (
+  [11] = ACTION_MODS_KEY(MOD_RSFT, KC_0),  // )
   // Combo
   [16] = ACTION_MODS_KEY(MOD_LALT | MOD_LCTL, KC_DEL), // Ctrl+Alt+Delete
-  [17] = ACTION_MODS_KEY(MOD_LSFT | MOD_LCTL, KC_ESC), // Ctrl+Shft+Escape
+  [17] = ACTION_MODS_KEY(MOD_RSFT | MOD_LCTL, KC_ESC), // Ctrl+Shft+Escape
   // Symbols
-  [18] = ACTION_MODS_KEY(MOD_LSFT, KC_1), // !
-  [19] = ACTION_MODS_KEY(MOD_LSFT, KC_2), // @
-  [20] = ACTION_MODS_KEY(MOD_LSFT, KC_3), // #
-  [21] = ACTION_MODS_KEY(MOD_LSFT, KC_4), // $
-  [22] = ACTION_MODS_KEY(MOD_LSFT, KC_5), // %
-  [23] = ACTION_MODS_KEY(MOD_LSFT, KC_6), // ^
-  [24] = ACTION_MODS_KEY(MOD_LSFT, KC_7), // &
-  [25] = ACTION_MODS_KEY(MOD_LSFT, KC_8), // *
-  [26] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL), // +
-  [27] = ACTION_MODS_KEY(MOD_LSFT, KC_MINUS), // _
-  [28] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOTE), // "
-  [29] = ACTION_MODS_KEY(MOD_LSFT, KC_GRAVE), // ~
+  [18] = ACTION_MODS_KEY(MOD_RSFT, KC_1), // !
+  [19] = ACTION_MODS_KEY(MOD_RSFT, KC_2), // @
+  [20] = ACTION_MODS_KEY(MOD_RSFT, KC_3), // #
+  [21] = ACTION_MODS_KEY(MOD_RSFT, KC_4), // $
+  [22] = ACTION_MODS_KEY(MOD_RSFT, KC_5), // %
+  [23] = ACTION_MODS_KEY(MOD_RSFT, KC_6), // ^
+  [24] = ACTION_MODS_KEY(MOD_RSFT, KC_7), // &
+  [25] = ACTION_MODS_KEY(MOD_RSFT, KC_8), // *
+  [26] = ACTION_MODS_KEY(MOD_RSFT, KC_EQL), // +
+  [27] = ACTION_MODS_KEY(MOD_RSFT, KC_MINUS), // _
+  [28] = ACTION_MODS_KEY(MOD_RSFT, KC_QUOTE), // "
+  [29] = ACTION_MODS_KEY(MOD_RSFT, KC_GRAVE), // ~
  };
 
 // Run a script and pass a key number to it. This is Windows specific and the script needs to be on your path.
